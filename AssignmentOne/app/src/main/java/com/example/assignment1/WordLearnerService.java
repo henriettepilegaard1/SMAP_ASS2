@@ -41,6 +41,7 @@ public class WordLearnerService extends Service
     public void onCreate()
     {
         super.onCreate();
+        wordObjectDatabase = ((WordObjectApplication)getApplicationContext()).getDb();
     }
 
     public class WordLearnerServiceBinder extends Binder
@@ -59,13 +60,13 @@ public class WordLearnerService extends Service
         }
         String url = "https://owlbot.info/api/v4/dictionary/" + word;
 
-       /* JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+       JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response)
                     {
                         WordObject newWord = parseJSONToWordObject(response);
-                        wordObjectDatabase.wordObjectDAO().add(new WordObject("1", "2", "3", "4"));
+                        wordObjectDatabase.wordObjectDAO().add(newWord);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -79,14 +80,8 @@ public class WordLearnerService extends Service
                 params.put("Authorization", "Token fef073a9f1aafd3a756e36c1e7f68f80a147cfe8");
                 return params;
             }
-        }; */
+        };
 
-       JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-           @Override
-           public void onResponse(JSONObject response) {
-
-           }
-       })
         requestQueue.add(stringRequest);
     }
 
@@ -95,7 +90,6 @@ public class WordLearnerService extends Service
         Gson gson = new GsonBuilder().create();
         WordObject wordObject = gson.fromJson(jsonString.toString(), WordObject.class);
         Log.d(LOGParse, "Parsed Successfully");
-        ((WordObjectApplication)getApplicationContext()).getDb().wordObjectDAO().add(wordObject);
         return wordObject;
     }
 

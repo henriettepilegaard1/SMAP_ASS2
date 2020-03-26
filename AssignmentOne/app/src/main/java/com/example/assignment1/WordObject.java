@@ -1,8 +1,5 @@
 package com.example.assignment1;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -15,8 +12,9 @@ import java.util.List;
 @Entity
 public class WordObject {
 
-    @PrimaryKey
-    @NonNull
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
     private String word;
 
     private String pronunciation;
@@ -67,6 +65,14 @@ public class WordObject {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public List<Definition> getDefinitions() {

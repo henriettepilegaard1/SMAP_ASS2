@@ -71,7 +71,9 @@ public class MainActivity extends AppCompatActivity implements UpdateWordObject 
 
     private void bindToWordLearnerService()
     {
-        bindService(new Intent(MainActivity.this, WordLearnerService.class), serviceConnection, Context.BIND_AUTO_CREATE);
+        Intent serviceIntent = new Intent(MainActivity.this, WordLearnerService.class);
+        startService(serviceIntent);
+        bindService(serviceIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         bound = true;
     }
 
