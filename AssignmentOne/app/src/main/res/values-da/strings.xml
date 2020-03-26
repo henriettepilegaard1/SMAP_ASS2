@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lær ord</string>
+    <string name="MyWord">Mine Ord</string>
+    <string name="ExitButton">Afslut</string>
+    <string name="coolness">Hvor sejt er dette ord?</string>
+    <string name="ratingText">0,0</string>
+    <string name="notes">Noter</string>
+    <string name="noteField">Plads til dine seje noter</string>
+    <string name="edit">Rediger</string>
+    <string name="nameOfAnimal">Navn</string>
+    <string name="pronunciation">Udtale</string>
+    <string name="description">Beskrivelse</string>
+    <string name="descriptionText">Beskrivelses Tekst</string>
+    <string name="newWord">Tilføj</string>
+    <string name="update">Opdater</string>
+    <string name="delete">Slet</string>
+</resources>
+    <!--' https://developer.android.com/training/basics/supporting-devices/languages?fbclid=IwAR0ryFyIptOHu2dDzh-dPv_1OKeq-u0eEy3XTi5PJnZoYc2LMPwa8Z8R5YI '-->

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#A4C4CA</color>
+    <color name="colorPrimaryDark">#09174F</color>
+    <color name="colorAccent">#09174F</color>
+    <color name="background">#A4C4CA</color>
+    <color name="blueColor">#09174F</color>
+    <color name="pronColor">#F8F8F8</color>
+</resources>
